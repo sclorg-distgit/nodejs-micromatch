@@ -7,7 +7,7 @@
 Summary:       Glob matching for javascript/node.js
 Name:          %{?scl_prefix}nodejs-%{npm_name}
 Version:       2.3.5
-Release:       5%{?dist}
+Release:       6%{?dist}
 License:       MIT
 URL:           https://github.com/jonschlinkert/micromatch
 Source0:       http://registry.npmjs.org/%{npm_name}/-/%{npm_name}-%{version}.tgz
@@ -27,6 +27,7 @@ or use micromatch() instead of multimatch().
 
 %nodejs_fixdep lazy-cache
 %nodejs_fixdep optimist
+%nodejs_fixdep normalize-path
 
 chmod 644 index.js LICENSE package.json README.md
 
@@ -45,7 +46,7 @@ cp -pr index.js lib package.json %{buildroot}%{nodejs_sitelib}/%{npm_name}
 %{nodejs_sitelib}/%{npm_name}
 
 %changelog
-* Wed Feb 17 2016 Tomas Hrcka <thrcka@redhat.com> - 2.3.5-5
+* Wed Feb 24 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 2.3.5-6
 - Fix dependency on collection metapackage
 
 * Thu Jan 07 2016 Tomas Hrcka <thrcka@redhat.com> - 2.3.5-3
